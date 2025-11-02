@@ -118,3 +118,4 @@ my portfolio/
 4. Deploy to your hosting service
 
 The portfolio will automatically populate all sections with your resume data!
+
