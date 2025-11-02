@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#0f0f14"/>
+    <title>Portfolio | 3D Experience</title>
+    <meta name="description" content="A modern 3D portfolio with interactive visuals and smooth UX."/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="assets/profile.jpg.jpeg" as="image" imagesizes="140px"/>
+
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+        <a href="#hero" class="brand">Trupti Ranjan Singh</a>
+        <nav class="nav">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <button id="theme-toggle" class="icon-button" aria-label="Toggle theme" title="Toggle theme">
+                <span class="icon">☾</span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="section hero">
+            <div class="hero-inner">
+                <img class="avatar tilt" src="assets/profile.jpg.jpeg" alt="Trupti Ranjan Singh profile photo" width="140" height="140">
+                <h1 class="title">Hi, I'm <span class="accent">Trupti Ranjan Singh</span></h1>
+                <p class="subtitle">Aspiring to be a cybersecurity professional on a mission to enhance digital safety</p>
+                <div class="cta-row">
+                    <a href="#projects" class="btn primary">View Projects</a>
+                    <a href="#contact" class="btn ghost">Get In Touch</a>
+                    <a href="assets/TruptiRanjanSinghResume4.pdf" class="btn ghost" target="_blank" rel="noopener noreferrer">Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About</h2>
+                <div class="grid two">
+                    <div class="card tilt">
+                        <h3>Who I am</h3>
+                        <p id="about-summary">
+                            Currently engaged as a CTF Player with TryHackMe, I'm immersed in honing my ethical hacking skills. This role allows me to apply my cybersecurity knowledge from Sri Sri University's B.Tech program in real-world scenarios. My expertise in red teaming, combined with a passion for cyber defense, uniquely positions me to tackle complex security challenges.
+                        </p>
+                        <p>
+                            Education at Cisco Networking Academy further bolsters my technical acumen, enabling me to contribute meaningfully to the cybersecurity community. As I navigate the intricate digital landscapes, my goal is to empower organizations with robust security measures and foster a safer online environment for all.
+                        </p>
+                    </div>
+                    <div class="card tilt">
+                        <h3>Skills</h3>
+                        <ul class="tags" id="skills-list">
+                            <!-- Skills will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section alt">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <ol class="timeline" id="education-list">
+                    <!-- Education items will be populated by JavaScript -->
+                </ol>
+            </div>
+        </section>
+
+        <section id="projects" class="section alt">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="grid three" id="projects-list">
+                    <article class="project-card tilt">
+                        <div class="project-media"></div>
+                        <div class="project-content">
+                            <h3>face detection</h3>
+                            <p>Implementations of face detection algorithms in C and Python. Utilizing OpenCV to detect faces in images and videos.</p>
+                            <div class="chip-row">
+                                <span class="chip">Python</span>
+                                <span class="chip">C</span>
+                                <span class="chip">OpenCV</span>
+                            </div>
+                            <div class="actions">
+                                <a href="https://github.com/Magma69-cyber/face-detection" class="text-link" target="_blank" rel="noopener noreferrer">Live</a>
+                                <a href="https://github.com/Magma69-cyber/face-detection/blob/main/face%20detection.py" class="text-link" target="_blank" rel="noopener noreferrer">Code</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card tilt">
+                        <div class="project-media" style="background-image: url('assets/password-tool.png.png'); background-size: cover; background-position: center;"></div>
+                        <div class="project-content">
+                            <h3>password strength checker and generator</h3>
+                            <p>This password tool checks strength, gives expert tips, and generates ultra-strong passwords with a mix of characters, digits, and symbols. With secure input and smart validation, it’s your go-to for safer logins and peace of mind—all in a clean, user-friendly package.</p>
+                            <div class="chip-row">
+                                <span class="chip">Python</span>
+                                <span class="chip">C</span>
+                                <span class="chip">Security</span>
+                            </div>
+                            <div class="actions">
+                                <a href="https://github.com/Magma69-cyber/password-strength-checker" class="text-link" target="_blank" rel="noopener noreferrer">Live</a>
+                                <a href="https://github.com/Magma69-cyber/password-strength-checker/blob/main/password%20strength%20checker%20and%20generator.py" class="text-link" target="_blank" rel="noopener noreferrer">Code</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card tilt">
+                        <div class="project-media"></div>
+                        <div class="project-content">
+                            <h3>Your Project Title</h3>
+                            <p>One-line description of your project. Replace with your details.</p>
+                            <div class="chip-row">
+                                <span class="chip">Tech</span>
+                                <span class="chip">Stack</span>
+                            </div>
+                            <div class="actions">
+                                <a href="#" class="text-link">Live</a>
+                                <a href="#" class="text-link">Code</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card tilt">
+                        <div class="project-media"></div>
+                        <div class="project-content">
+                            <h3>Your Project Title</h3>
+                            <p>One-line description of your project. Replace with your details.</p>
+                            <div class="chip-row">
+                                <span class="chip">Tech</span>
+                                <span class="chip">Stack</span>
+                            </div>
+                            <div class="actions">
+                                <a href="#" class="text-link">Live</a>
+                                <a href="#" class="text-link">Code</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <form class="contact-form" action="mailto:truptiranjansingh450@gmail.com" method="post" enctype="text/plain">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" placeholder="Your name" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="truptiranjansingh450@gmail.com" required>
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Say hello..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Send</button>
+                    <p class="form-note">Prefer email? Write me at <a href="mailto:truptiranjansingh450@gmail.com">truptiranjansingh450@gmail.com</a></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="year"></span> Trupti Ranjan Singh. All rights reserved.</p>
+            <div class="socials">
+                <a href="https://github.com/Magma69-cyber" aria-label="GitHub" class="text-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/trupti-ranjan-singh-ba1384311/" aria-label="LinkedIn" class="text-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="#" aria-label="Twitter" class="text-link">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
+    <script src="assets/resume-data.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+
+
