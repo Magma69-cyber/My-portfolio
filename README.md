@@ -1,13 +1,128 @@
-# Portfolio with Dynamic Resume Integration
+# 🚀 3D Portfolio Website
 
-This portfolio now supports dynamic loading of resume data from a JSON file. Here's how to integrate your resume:
+A modern, interactive 3D portfolio website built with vanilla JavaScript and Three.js. Features a beautiful animated background, smooth transitions, and a fully responsive design that showcases your skills, projects, and education.
 
-## How to Add Your Resume JSON
+![Portfolio Preview](https://img.shields.io/badge/Portfolio-3D%20Experience-7c5cff?style=for-the-badge)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=for-the-badge&logo=javascript)
+![Three.js](https://img.shields.io/badge/Three.js-3D-black?style=for-the-badge&logo=three.js)
 
-### Option 1: Replace the existing data in `resume-data.js`
-1. Open `resume-data.js`
-2. Replace the `resumeData` object with your actual resume JSON data
-3. Make sure your JSON follows this structure:
+## ✨ Features
+
+- **🎨 3D Interactive Background** - Animated particle system powered by Three.js with mouse interaction
+- **🌓 Dark/Light Theme** - Toggle between themes with persistent storage
+- **📱 Fully Responsive** - Works seamlessly on desktop, tablet, and mobile devices
+- **⚡ Smooth Animations** - Parallax effects, tilt interactions, and smooth scrolling
+- **🎯 Dynamic Content** - All content loaded from `resume-data.js` for easy updates
+- **🔍 SEO Optimized** - Proper meta tags and semantic HTML
+- **♿ Accessible** - ARIA labels and keyboard navigation support
+- **📧 Contact Form** - Direct email integration
+
+## 🛠️ Technologies Used
+
+- **HTML5** - Semantic markup
+- **CSS3** - Modern styling with CSS variables and Grid/Flexbox
+- **JavaScript (ES6+)** - Vanilla JavaScript with no dependencies
+- **Three.js** - 3D graphics and particle system
+- **WebGL** - Hardware-accelerated rendering
+
+## 📁 Project Structure
+
+```
+my-portfolio/
+├── index.html              # Main HTML structure
+├── main.js                 # JavaScript functionality & animations
+├── styles.css              # All styling and themes
+├── assets/
+│   ├── resume-data.js      # Resume/portfolio data (JSON)
+│   ├── profile.jpg.jpeg     # Profile picture
+│   ├── face.webp           # Project images
+│   ├── password-tool.png.png
+│   ├── keylogger.png
+│   ├── srisriuniversity.webp
+│   ├── aakash.webp
+│   ├── davomc.webp
+│   └── TruptiRanjanSinghResume4.pdf
+└── README.md               # This file
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- A modern web browser (Chrome, Firefox, Safari, Edge)
+- A local web server (optional, for development)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Magma69-cyber/my-portfolio.git
+   cd my-portfolio
+   ```
+
+2. **Customize the content**
+   - Open `assets/resume-data.js`
+   - Replace all placeholder data with your information:
+     - Personal information
+     - Skills
+     - Education
+     - Projects
+     - Experience
+     - Social links
+
+3. **Update assets**
+   - Replace `assets/profile.jpg.jpeg` with your profile picture
+   - Add project images to the `assets/` folder
+   - Update image paths in `resume-data.js`
+
+4. **Local development**
+   - Simply open `index.html` in a browser, or
+   - Use a local server:
+     ```bash
+     # Using Python
+     python -m http.server 8000
+     
+     # Using Node.js (http-server)
+     npx http-server
+     
+     # Using PHP
+     php -S localhost:8000
+     ```
+   - Visit `http://localhost:8000` in your browser
+
+## 🎨 Customization
+
+### Colors & Theme
+
+Edit CSS variables in `styles.css`:
+
+```css
+:root {
+    --bg: #0b0b10;              /* Background color */
+    --bg-alt: #0e0e15;          /* Alt background */
+    --text: #e8eaf0;            /* Text color */
+    --muted: #9aa1af;           /* Muted text */
+    --accent: #7c5cff;          /* Accent color */
+    --card: #13131b;            /* Card background */
+    --border: #222233;          /* Border color */
+}
+```
+
+### Adding Sections
+
+1. Add new section HTML in `index.html`
+2. Add corresponding data structure in `resume-data.js`
+3. Update `main.js` to populate the new section
+
+### Modifying Animations
+
+- **3D Background**: Edit particle settings in `main.js` (line ~186)
+- **Tilt Effect**: Adjust `dampen` value in `main.js` (line ~171)
+- **Parallax**: Modify scroll handler in `main.js` (line ~153)
+
+## 📝 Data Structure
+
+The portfolio uses a structured data format in `resume-data.js`:
 
 ```javascript
 const resumeData = {
@@ -17,18 +132,19 @@ const resumeData = {
         email: "your.email@example.com",
         location: "Your Location",
         summary: "Your professional summary",
-        avatar: "path/to/your/avatar.jpg"
+        avatar: "assets/profile.jpg.jpeg"
     },
     skills: {
-        technical: ["Skill1", "Skill2", "Skill3"],
-        cybersecurity: ["Security Skill1", "Security Skill2"]
+        technical: ["JavaScript", "Python", ...],
+        cybersecurity: ["Ethical Hacking", ...]
     },
     education: [
         {
             institution: "University Name",
             degree: "Degree Name",
             years: "2020-2024",
-            description: "Description"
+            description: "Description",
+            image: "assets/university.webp"  // Optional
         }
     ],
     projects: [
@@ -38,84 +154,62 @@ const resumeData = {
             technologies: ["Tech1", "Tech2"],
             liveUrl: "https://project-url.com",
             codeUrl: "https://github.com/project",
-            image: "path/to/image.jpg" // optional
+            image: "assets/project.webp"  // Optional
         }
     ],
-    experience: [
-        {
-            role: "Job Title",
-            company: "Company Name",
-            period: "2020-Present",
-            description: "Job description",
-            achievements: ["Achievement 1", "Achievement 2"]
-        }
-    ],
+    experience: [...],
     social: {
-        github: "https://github.com/yourusername",
-        linkedin: "https://linkedin.com/in/yourusername",
-        twitter: "https://twitter.com/yourusername"
+        github: "https://github.com/username",
+        linkedin: "https://linkedin.com/in/username",
+        twitter: "https://twitter.com/username"
     }
 };
 ```
 
-### Option 2: Load from external JSON file
-1. Create a `resume.json` file in your project root
-2. Add your resume data in JSON format
-3. Modify `main.js` to fetch the JSON file:
+## 🌐 Browser Support
 
-```javascript
-// Add this to main.js before the populateResume function
-fetch('resume.json')
-    .then(response => response.json())
-    .then(data => {
-        window.resumeData = data;
-        populateResume();
-    })
-    .catch(error => {
-        console.error('Error loading resume data:', error);
-        // Fallback to default data
-        populateResume();
-    });
-```
+- ✅ Chrome (latest)
+- ✅ Firefox (latest)
+- ✅ Safari (latest)
+- ✅ Edge (latest)
+- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
 
-## Features
+**Note**: WebGL support required for 3D background. Falls back gracefully on older browsers.
 
-- **Dynamic Content**: All content is loaded from the resume data
-- **Easy Updates**: Change your resume data in one place
-- **Responsive Design**: Works on all devices
-- **Modern UI**: Beautiful 3D background with interactive elements
+## 📸 Screenshots
 
-## File Structure
+_Add screenshots of your portfolio here_
 
-```
-my portfolio/
-├── index.html          # Main HTML file
-├── main.js            # JavaScript functionality
-├── resume-data.js     # Resume data (replace with your data)
-├── styles.css         # Styling
-├── assets/            # Images and media
-└── README.md          # This file
-```
+## 🔗 Live Demo
 
-## Customization
+[Visit the live portfolio](https://yourusername.github.io/my-portfolio) _(Update with your actual deployment URL)_
 
-- Update colors in `styles.css`
-- Modify animations in `main.js`
-- Add new sections by extending the `resumeData` structure
-- Change the 3D background effects
+## 📄 License
 
-## Browser Support
+This project is open source and available under the [MIT License](LICENSE).
 
-- Modern browsers with WebGL support
-- Graceful fallback for older browsers
-- Mobile-responsive design
+## 👤 Author
 
-## Getting Started
+**Trupti Ranjan Singh**
 
-1. Replace the data in `resume-data.js` with your actual resume information
-2. Update images in the `assets/` folder
-3. Test locally by opening `index.html` in a browser
-4. Deploy to your hosting service
+- GitHub: [@Magma69-cyber](https://github.com/Magma69-cyber)
+- LinkedIn: [Trupti Ranjan Singh](https://www.linkedin.com/in/trupti-ranjan-singh-ba1384311/)
+- Email: truptiranjansingh450@gmail.com
 
-The portfolio will automatically populate all sections with your resume data!
+## 🤝 Contributing
 
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Magma69-cyber/my-portfolio/issues).
+
+## ⭐ Show Your Support
+
+If you like this project, please give it a ⭐ on GitHub!
+
+## 🙏 Acknowledgments
+
+- [Three.js](https://threejs.org/) for the amazing 3D library
+- [Inter Font](https://fonts.google.com/specimen/Inter) by Google Fonts
+- Inspiration from modern portfolio designs
+
+---
+
+**Made with ❤️ by Trupti Ranjan Singh**
